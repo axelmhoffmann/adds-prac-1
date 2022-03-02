@@ -2,7 +2,7 @@
 
 int ShoppingList::GetIndex(string name)
 {
-    for (int i = 0; i < items.size(); i++)
+    for (size_t i = 0; i < items.size(); i++)
     {
         if (items[i].name == name)
         {
@@ -18,7 +18,7 @@ void ShoppingList::Add(string name, int count)
     int index = GetIndex(name);
     if (index != -1)
     {
-        items[i].count += count;
+        items[index].count += count;
         return;
     }
 
@@ -33,10 +33,17 @@ void ShoppingList::Remove(string name, int count)
         return;
     }
 
-    items[i].count -= count;
-    if (items[i].count <= 0)
+    items[index].count -= count;
+    if (items[index].count <= 0)
     {
-        items.erase(items.start() + i);
+        items.erase(items.begin() + index);
     }
-    
+}
+
+void ShoppingList::Print()
+{
+    for (size_t i = 0; i < items.size(); i++)
+    {
+        cout << to_string(items[i].count) << " x " << items[i].name << endl;
+    }
 }

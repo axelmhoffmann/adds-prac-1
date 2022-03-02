@@ -4,7 +4,7 @@ vector<string> end_terms = {"end", "exit", "quit", "q"};
 
 bool string_matches(vector<string> arr, string query)
 {
-    for (int i = 0; i < arr.size(); i++)
+    for (size_t i = 0; i < arr.size(); i++)
     {
         if (arr[i] == query)
         {

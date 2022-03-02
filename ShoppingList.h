@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include "Item.h"
+using namespace std;
 
 class ShoppingList
 {
@@ -13,4 +14,4 @@ class ShoppingList
 
     private:
         vector<Item> items;
-}
+};
